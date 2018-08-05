@@ -14,8 +14,8 @@ export default function jsonp(url,data,option){
     })
   })
 }
-/* url是拼接好的 */
-function param(data){
+/* param是将url拼接好的函数 */
+export function param(data){
   let url = '';
   for(var k in data){
     let value = data[k] !== undefined ? data[k] : '';
