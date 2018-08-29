@@ -30,13 +30,14 @@
         this._setSliderWidth();
         this._initSlider();
       },20)
+      //延时保证dom的成功渲染，20ms是经验值
     },
     methods: {
       _setSliderWidth(){
         this.children = this.$refs.sliderGroup.children;
 
         let width = 0;
-        let sliderWidth = this.$refs.slider.clientWidth;
+        let sliderWidth = this.$refs.slider.clientWidth;//计算父容器的宽度
         for (let i = 0; i < this.children.length; i++) {
           let child = this.children[i];
           addClass(child, 'slider-item');
@@ -47,7 +48,7 @@
         if(this.loop){
           width += 2 * sliderWidth;
         }
-        this.$ref.sliderGroup.style.width = width + 'px'
+        this.$refs.sliderGroup.style.width = width + 'px'
       },
       _initSlider(){
         this.slider = new BScroll(this.$refs.slider,{
