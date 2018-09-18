@@ -11,3 +11,20 @@ export function getRecommend() {
   return jsonp(url, data, options)
 }
 /* 利用jsonp抓取到我们想要的数据 */
+
+
+export function getDisList(){
+  this.axios.get('https://c.y.qq.com/splcloud/fcgi-bin/fcg_musiclist_getmyfav.fcg',
+  	{
+  		headers:
+  	 {
+  	 	referer: 'https://c.y.qq.com/',
+  	 	host: 'c.y.qq.com'
+  	 },
+  	 	pramas: 
+  	 {
+  	 	hostUin: 0,
+  	 	platform: 'yqq',
+  	 	needNewCode: 0
+  	 }  }).then( res => console.log(res.data))
+}

@@ -11,12 +11,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        'api/getDiscLists':{
+        'api/getDisLists':{
             target: 'https://c.y.qq.com/splcloud/fcgi-bin/p.fcg',
-            bypass: function(req, res, proxyOptions){
-                req.headers.referer = 'http://c.y.qq.com';
-                req.headers.host = 'c.y.qq.com';
-            },
+            changeOrigin: true,
             pathRewrite: {
                 '^api/getDiscLists': ''
             }

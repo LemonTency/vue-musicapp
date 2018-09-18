@@ -21,7 +21,7 @@
 
 <script type="ecmascript-6">
 import Slider from 'base/slider/slider'
-import {getRecommend} from 'api/recommend.js'
+import {getRecommend,getDisList} from 'api/recommend.js'
 import {ERR_OK} from 'api/config.js'
 export default {
   data(){
@@ -31,6 +31,7 @@ export default {
   },
   created() {
     this._getRecommend()
+    this.getDisList()
   },
   methods: {
     _getRecommend() {
@@ -41,6 +42,7 @@ export default {
         }
       })
     },
+    getDisList
   },
   components: {
     Slider
